@@ -100,7 +100,8 @@ Playbooks are sets of instructions that define a series of tasks to be executed 
 15. Update your Virtual Box again. `sudo apt update -y`
 16. Now install Ansible onto your Virtual Box. `sudo apt install ansible -y`
 17. Check your Ansible version. `sudo ansible --version`
-18. To change directory between two Virtual Boxes. The ip address can be found in your Vagrant file.
+18. To change directory between two Virtual Boxes. The password to enter is `vagrant` (The ip address for the Virtual Box can be found in your Vagrant file)
     ```
     ssh vagrant@<ip-address>
     ```
+
