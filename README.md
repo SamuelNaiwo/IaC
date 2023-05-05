@@ -41,7 +41,7 @@ Playbooks are sets of instructions that define a series of tasks to be executed 
 
 3. Download Virtual Box on your local machine. Check what version you need first.
 4. Download VS Code on your local machine.
-5. Open VS Code and change directory to your folder, Run the command `vagrant init` to initialise a Vagrant file.
+5. Open VS Code and change directory to your folder. Run the command `vagrant init` to initialise a Vagrant file.
 6. In your Vagrant file, delete what is in there and enter the following:
     ```
     Vagrant.configure("2") do |config|
