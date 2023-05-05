@@ -24,7 +24,7 @@ YAML (short for "YAML Ain't Markup Language") is a human-readable data serializa
 
 Playbooks are sets of instructions that define a series of tasks to be executed on remote hosts using Ansible. Playbooks can include conditionals, loops, and variables, making them a powerful way to automate complex workflows.
 
-# Set Up Ansible
+# Set Up Ansible Controller with Node/s
 
 1. Firstly, download Vagrant on your local machine
 
