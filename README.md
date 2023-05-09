@@ -107,3 +107,52 @@ Playbooks are sets of instructions that define a series of tasks to be executed 
     ssh vagrant@<ip-address>
     ```
 
+# Set Up Controller
+
+## Launch Virtual Machines
+
+1. Open terminal/bash window.
+
+2. Change directory into where your vagrant file is.
+3. Launch your Virtual Machines with the command `vagrant up`.
+4. SSh into your controller VM `vagrant ssh controller`.
+5. Now update and upgrade your machine. `sudo apt update -y && sudo apt upgrade -y`
+
+## Test SSH Connection
+
+1. Use the following command to ssh into your web machine from your controller machine. `ssh vagrant@<vm-ip-address>`
+
+2. Run the following command to update and upgrade your machine. `sudo apt update -y && sudo apt upgrade -y`
+3. Use the command `exit` to exit out your web machine back into your controller machine.
+4. Use the following command to ssh into your db machine from your controller machine. `ssh vagrant@<vm-ip-address>`
+5. Run the following command to update and upgrade your machine. `sudo apt update -y && sudo apt upgrade -y`
+6. Use the command `exit` to exit out your web machine back into your controller machine.
+
+## Set Up Controller Connection
+
+1. Change directory into your ansible default directory. `cd /etc/ansible/`
+
+2. Check what files/folder are in your current directory. `ls`
+3. Open the hosts file with the following command. `sudo nano hosts`
+4. In the file create two seperate groups. One for your web machine and one for your db machine. The syntax is below.
+
+    - ansible_connection=ssh is used to show how we want to conncect.
+    - ansible_ssh_user=vagrant is to show who the user is.
+    - ansible_ssh_pass=vagrant is to tell what the password is.
+
+    ```
+    [web]
+    192.168.33.10 ansible_connection=ssh ansible_ssh_user=vagrant ansible_ssh_pass=vagrant
+
+    [db]
+    192.168.33.11 ansible_connection=ssh ansible_ssh_user=vagrant ansible_ssh_pass=vagrant
+
+    ```
+
+5. To check the connection is working between the controller machine and the web & db machine use the following command. `sudo ansible all -m ping`
+
+- If you want to check the connection between one machine use the commmand `sudo ansible <box-name> -m ping`.
+
+6. Ansible is powerful and to check information about machine use the following command. `sudo ansible all -a "<command>"`
+
+- If you want to check information for one machine use the following command. `sudo ansible <box-name> -a "<command>"`
