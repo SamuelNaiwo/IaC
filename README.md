@@ -1,5 +1,7 @@
 # IaC
 
+    ![Alt text](img/IaC%20Anisble.png)
+
 ## What is Iac?
 
 - Infastructure As Code (IaC) is the managing and provisioning of your infrastructure through code instead of through manual processes.
