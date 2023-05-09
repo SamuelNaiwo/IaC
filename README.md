@@ -155,4 +155,18 @@ Playbooks are sets of instructions that define a series of tasks to be executed 
 
 6. Ansible is powerful and to check information about machine use the following command. `sudo ansible all -a "<command>"`
 
+- `sudo ansible all -a "date"` | Date and timezone for each machine.
+- `sudo ansible all -a "uname -a"` | Information about each machine.
+- `sudo ansible all -a "free"` | Shows free memory on each machine.
+
 - If you want to check information for one machine use the following command. `sudo ansible <box-name> -a "<command>"`
+
+## Test Data Transfer Between Machines.
+
+1. Create a text file. `sudo nano test.txt`
+
+2. To transfer data between machines use the following command in the test file. `sudo ansible web -m copy -a "src=/etc/ansible/test.txt dest=/home/vagrant"`
+
+    - web | Agent node where we want to copy to.
+    - -m copy | (module copy) That will create a copy of the file.
+    - -a "src=/etc/ansible/test.txt dest=/home/vagrant" | Specifies a source where file located on the controller, and the destination of where the file will be copied to.
