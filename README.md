@@ -161,7 +161,7 @@ Playbooks are sets of instructions that define a series of tasks to be executed 
 
 - If you want to check information for one machine use the following command. `sudo ansible <box-name> -a "<command>"`
 
-## Test Data Transfer Between Machines.
+## Test Data Transfer Between Machines (ADHOC Commands)
 
 1. Create a text file. `sudo nano test.txt`
 
