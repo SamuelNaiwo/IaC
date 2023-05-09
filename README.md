@@ -1,6 +1,6 @@
 # IaC
 
-    ![Alt text](img/IaC%20Anisble.png)
+![Alt text](img/IaC%20Anisble.png)
 
 ## What is Iac?
 
